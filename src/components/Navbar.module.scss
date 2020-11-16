@@ -1,0 +1,15 @@
+.nav{
+  grid-area: n;
+  background: burlywood;
+}
+
+.item{
+  list-style-type: none;
+  a{
+    color: white;
+    &.active{
+      color: red;
+    }
+  }
+} 
+
