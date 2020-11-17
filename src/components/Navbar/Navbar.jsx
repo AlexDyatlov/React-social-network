@@ -7,19 +7,19 @@ const Navbar = () => {
     <nav className={classes.nav}>
       <ul>
         <li className={classes.item}>
-          <a href="#">Profile</a>
+          <a href="#">Профиль</a>
         </li>
         <li className={classes.item}>
-          <a className={classesActive} href="#">Message</a>
+          <a className={classesActive} href="#">Сообщения</a>
         </li>
         <li className={classes.item}>
-          <a href="#">News</a>
+          <a href="#">Новости</a>
         </li>
         <li className={classes.item}>
-          <a href="#">Music</a>
+          <a href="#">Музыка</a>
         </li>
         <li className={classes.item}>
-          <a href="#">Settings</a>
+          <a href="#">Настройки</a>
         </li>
       </ul>
     </nav>
