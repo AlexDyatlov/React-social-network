@@ -1,6 +1,17 @@
+html {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  position: relative;
+  overflow-x: hidden;
+}
+
 .app-wrapper {
   margin: 0 auto;
-  width: 1200px;
+  max-width: 1200px;
   display: grid;
   grid-template-rows: 60px 1fr;
   grid-template-columns: 2fr 10fr;

@@ -1,0 +1,14 @@
+.postBlock {
+  padding: 10px;
+  button{
+    display: block;
+    cursor: pointer;
+  }
+  textarea{
+    resize: none;
+    outline: transparent;
+  }
+}
+.post{
+  margin-top: 10px;
+}
