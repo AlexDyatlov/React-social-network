@@ -2,8 +2,11 @@ import s from './MyPosts.module.scss'
 import Post from './Post/Post'
 
 
-const MyPosts = () => {
+const MyPosts = (props) => {
 
+  let postsElements = 
+  props.posts.map( p => <Post key={p.message} key={p.likesCount} message={p.message} likeCount={p.likesCount}/>)
+  
   return (
     <div className={s.postBlock}>
         <h3>Мои посты</h3>
@@ -13,14 +16,14 @@ const MyPosts = () => {
           <button>Удалить пост</button>
         </div>
         <div className={s.post}>
-          <Post message='Hi, how are you?' likeCount='12'/>
-          <Post message="It's my first post." likeCount='18'/>
+          {postsElements}
         </div>
     </div>
-
-   
   )
 }
+
+
+
 
 export default MyPosts;
 
