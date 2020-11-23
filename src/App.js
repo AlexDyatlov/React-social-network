@@ -10,7 +10,9 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 const App = (props) => {
 
-    let SomeComponent = () => <Dialogs messages={props.messages} dialogs={props.dialogs} />
+    let SomeComponent = () => <Dialogs 
+        state={props.state.dialogsPage} 
+        state={props.state.dialogsPage} />
 
     return (
         <BrowserRouter>
@@ -20,7 +22,7 @@ const App = (props) => {
                 <div className='app-wrapper-content'>
                     {/* <Route path='/dialogs' render={ () => <Dialogs messages={props.messages} dialogs={props.dialogs} /> }/> */}
                     <Route path='/dialogs' component={SomeComponent}/>
-                    <Route path='/profile' render={ () => <Profile posts={props.posts}/> }/>
+                    <Route path='/profile' render={ () => <Profile state={props.state.profilePage}/> }/>
                     <Route path='/news' render={() => <News/>}/>
                     <Route path='/music' render={() => <Music />}/>
                     <Route path='/settings' render={() => <Settings />}/>
