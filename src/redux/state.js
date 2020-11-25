@@ -1,4 +1,6 @@
-import { rerenderEntireTree } from "../render"
+let rerenderEntireTree = () => {
+  console.log('State changed')
+}
 
 let state = {
   profilePage: {
@@ -8,7 +10,8 @@ let state = {
       {id: 3, message: 'Привет, как тебя зовут?', likesCount: 11},
       {id: 4, message: 'Какие сегодня новости?', likesCount: 6},
       {id: 5, message: 'Новый тренд', likesCount: 4},
-    ]
+    ],
+    newPostText: 'it-kryto'
   },
   dialogsPage: {
     messages: [
@@ -30,14 +33,26 @@ let state = {
   sidebar: {}
 }
 
-export let addPost = (postMessage) => {
+window.state = state;
+
+export const addPost = () => {
   let newPost = {
     id: 5,
-    message: postMessage,
+    message: state.profilePage.newPostText,
     likesCount: 0
   }
   state.profilePage.posts.push(newPost)
+  state.profilePage.newPostText = ''
   rerenderEntireTree(state)
+}
+
+export const updateNewPostText = (newText) => {
+  state.profilePage.newPostText = newText;
+  rerenderEntireTree(state)
+}
+
+export const subscribe = (observer) => {
+  rerenderEntireTree = observer; // наблюдатель
 }
 
 export default state

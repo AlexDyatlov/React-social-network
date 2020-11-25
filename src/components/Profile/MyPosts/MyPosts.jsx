@@ -11,16 +11,19 @@ const MyPosts = (props) => {
   let newPostElement = React.createRef() // Создаем пустую ссылку 
 
   let addPost = () => {
+    props.addPost();
+  }
+
+  let onPostChange = () => {
     let text = newPostElement.current.value;
-    props.addPost(text);
-    newPostElement.current.value = '';
+    props.updateNewPostText(text);
   }
   
   return (
     <div className={s.postBlock}>
         <h3>Мои посты</h3>
         <div>
-          <textarea ref={newPostElement}></textarea>
+          <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText} />
           <button onClick={addPost}>Добавить пост</button>
           <button>Удалить пост</button>
         </div>
