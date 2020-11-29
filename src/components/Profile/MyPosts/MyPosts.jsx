@@ -1,12 +1,12 @@
 import React from 'react';
-import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../redux/state';
+import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../redux/profileReducer';
 import s from './MyPosts.module.scss'
 import Post from './Post/Post'
 
 const MyPosts = (props) => {
 
   let postsElements = 
-  props.posts.map( p => <Post key={p.message} message={p.message} likeCount={p.likesCount}/>)
+      props.posts.map( p => <Post key={p.message} message={p.message} likeCount={p.likesCount}/>)
 
   let newPostElement = React.createRef() // Создаем пустую ссылку 
 
@@ -27,9 +27,15 @@ const MyPosts = (props) => {
     <div className={s.postBlock}>
         <h3>Мои посты</h3>
         <div>
-          <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText} />
-          <button onClick={addPost}>Добавить пост</button>
-          <button>Удалить пост</button>
+          <div>
+            <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText} />
+          </div>
+          <div>
+            <button onClick={addPost}>Добавить пост</button>
+          </div>
+          <div>
+            <button>Удалить пост</button>
+          </div>
         </div>
         <div className={s.post}>
           {postsElements}
@@ -37,9 +43,6 @@ const MyPosts = (props) => {
     </div>
   )
 }
-
-
-
 
 export default MyPosts;
 
