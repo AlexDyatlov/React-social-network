@@ -1,5 +1,4 @@
 import React from 'react';
-import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../redux/profileReducer';
 import s from './MyPosts.module.scss'
 import Post from './Post/Post'
 
@@ -10,17 +9,13 @@ const MyPosts = (props) => {
 
   let newPostElement = React.createRef() // Создаем пустую ссылку 
 
-  let addPost = () => {
-    // props.addPost()
-    props.dispatch(addPostActionCreator());
+  let onAddPost = () => {
+    props.addPost()
   }
 
   let onPostChange = () => {
     let text = newPostElement.current.value;
-    // props.updateNewPostText(text)
-    // let action = ({ type: 'UPDATE-NEW-POST-TEXT', newText: text});
-    let action = updateNewPostTextActionCreator(text);
-    props.dispatch(action)
+    props.updateNewPostText(text)
   }
   
   return (
@@ -31,7 +26,7 @@ const MyPosts = (props) => {
             <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText} />
           </div>
           <div>
-            <button onClick={addPost}>Добавить пост</button>
+            <button onClick={onAddPost}>Добавить пост</button>
           </div>
           <div>
             <button>Удалить пост</button>
