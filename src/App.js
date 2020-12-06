@@ -8,6 +8,7 @@ import Settings from './components/Settings/Settings';
 import Friends from './components/Friends/Friends';
 import { BrowserRouter, Route } from 'react-router-dom';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
+import UsersContainer from './components/Users/UsersContainer';
 
 const App = () => {
     return (
@@ -18,7 +19,8 @@ const App = () => {
                 <div className='app-wrapper-content'>
                     <Route path='/dialogs' render={ () => <DialogsContainer /> }/>
                     <Route path='/profile' render={ () => <Profile /> }/>
-                    <Route path='/news' render={() => <News/>}/>
+                    <Route path='/news' render={() => <News /> }/>
+                    <Route path='/users' render={ () => <UsersContainer/> }/>
                     <Route path='/music' render={() => <Music />}/>
                     <Route path='/Friends' render={() => <Friends />}/>
                     <Route path='/settings' render={() => <Settings />}/>
