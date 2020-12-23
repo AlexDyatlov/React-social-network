@@ -22,4 +22,6 @@ yarn-error.log*
 
 /public
 .idea
+.eslintcache
+yarn-error.log
 debug.log
