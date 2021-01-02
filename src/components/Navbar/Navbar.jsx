@@ -2,8 +2,6 @@ import { NavLink } from 'react-router-dom';
 import classes from './Navbar.module.scss'
 import s from './Navbar.module.scss'
 
-// const classesActive = `${classes.item} ${classes.active}`
-
 const Navbar = () => {
   return (
     <nav className={classes.nav}>

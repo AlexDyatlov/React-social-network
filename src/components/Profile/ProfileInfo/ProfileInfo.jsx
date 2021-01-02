@@ -1,11 +1,10 @@
 import React from 'react'
 import Preloader from '../../Preloader/Preloader'
 import s from './ProfileInfo.module.scss'
-import ProfileStatus from './ProfileStatus'
 import ProfileStatusWithHooks from './ProfileStatusWithHooks'
 
-const ProfileInfo = (props) => {
-  if (!props.profile) {
+const ProfileInfo = ({profile, status, updateStatus}) => {
+  if (!profile) {
     return <Preloader />
   }
 
@@ -15,8 +14,8 @@ const ProfileInfo = (props) => {
         <img src='https://theinpaint.com/images/example-1-2.jpg' alt="" />
       </div>
       <div className={s.descriptionBlock}>
-        <img src={props.profile.photos.small} />
-        <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus} />
+        <img src={profile.photos.small} />
+        <ProfileStatusWithHooks status={status} updateStatus={updateStatus} />
       </div>
     </div>
   )

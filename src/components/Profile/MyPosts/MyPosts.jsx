@@ -26,10 +26,12 @@ const AddMyPostsRedux = reduxForm ({
 }) (AddNewPostForm)
 
 
-const MyPosts = (props) => {
+const MyPosts = React.memo(props => {
 
   let postsElements = 
-      props.posts.map( p => <Post key={p.message} message={p.message} likeCount={p.likesCount}/>)
+      [...props.posts]
+      .reverse()
+      .map( p => <Post key={p.message} message={p.message} likeCount={p.likesCount}/>)
 
   let newPostElement = React.createRef() // Создаем пустую ссылку 
 
@@ -46,7 +48,7 @@ const MyPosts = (props) => {
         </div>
     </div>
   )
-}
+})
 
 export default MyPosts;
 
