@@ -1,5 +1,6 @@
 // DAL - data access layer
 import * as axios from 'axios'
+import { savePhoto } from '../redux/profileReducer'
 
 // экземпляр axiosa
 const instance = axios.create({
@@ -38,6 +39,18 @@ export const profileAPI = {
     return instance.put(`profile/status/`, { 
       status: status 
     })
+  },
+  savePhoto(photoFile) {
+    const formData = new FormData()
+    formData.append('image', photoFile)
+    return instance.put(`profile/photo/`, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    })
+  },
+  saveProfile(profile) {
+    return instance.put(`profile`, profile)
   }
 }
 

@@ -22,11 +22,20 @@ const ProfileStatusWithHooks = (props) => {
     setStatus(e.currentTarget.value)
   }
 
+  const styles = {
+    status: {
+      fontWeight: '700'
+    },
+    span:{
+      fontWeight: '400'
+    }
+  }
+
   return (
     <div>
       {!editMode &&
-        <div>
-          <span onDoubleClick={activeMode}>{props.status || "No status"}</span>
+        <div style={styles.status}>
+         Status: <span style={styles.span} onDoubleClick={activeMode}>{props.status || "No status"}</span>
         </div>
       }
       {editMode &&

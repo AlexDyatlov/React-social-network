@@ -1,9 +1,34 @@
 .descriptionBlock{
   padding: 10px;
-}
-.content{
   img{
-    width: 100%;
-    height: 400px;
+    width: 140px;
+    height: 140px;
   }
+  input{
+    display: block;
+    margin-bottom: 10px;
+  }
+}
+.aboutMe{
+  button{
+    background-color: #00c9b7;
+    color: #fff;
+    width: 150px;
+    height: 30px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .3s;
+    &:hover, &:focus{
+      background-color: #02ff74;
+      color: #000;
+    }
+  }
+  span{
+    font-weight: 700;
+  }
+}
+.contact{
+  padding-left: 15px;
 }

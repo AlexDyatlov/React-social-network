@@ -1,13 +1,27 @@
 .header{
   grid-area: h;
-  background: green;
-  img{
-    width: 60px;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #845EC2;
+  padding: 0 10px;
 }
 .loginBlock{
-  float: right;
   a{
+    color: rgb(2, 255, 116);
+  }
+  button{
+    width: 80px;
+    height: 30px;
+    background-color: #00c9b7;
     color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all .3s;
+    &:hover, &:focus{
+      background-color: rgb(2, 255, 116);
+      color: #000;
+    }
   }
 }
