@@ -1,7 +1,6 @@
 .nav{
   grid-area: n;
-  background: burlywood;
-  min-height: 100vh;
+  background: #496a7c;
 }
 
 .item{
@@ -11,7 +10,7 @@
     text-decoration: none;
     cursor: pointer;
     &.activeLink{
-      color: red;
+      color: #29ff0d;
     }
   }
 } 

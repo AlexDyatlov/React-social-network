@@ -17,12 +17,14 @@ body{
 .app-wrapper {
   margin: 0 auto;
   max-width: 1200px;
+  min-height: 100vh;
   display: grid;
   grid-template-rows: 60px 1fr;
   grid-template-columns: 2fr 10fr;
   grid-template-areas:
       "h h"
-      "n c";
+      "n c"
+      "f f";
   &-content {
     grid-area: c;
     background: cadetblue;
